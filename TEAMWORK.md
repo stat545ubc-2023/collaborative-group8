@@ -33,8 +33,8 @@
   - Bre will submit a pull request and ask Heather to review
   - Heather will review the document and merge the pull request. If she finds any errors, she will leave a comment; if necessary, she will fix the errors and submit a pull request to Bre  
 \
-  
-- Ramin will update the README document after Teamwork contract and troubleshooting document have been finalized
+
+- Ramin will update the README document after Teamwork contract and troubleshooting document have been finalized. When reviewing the final drafts of the README and TEAMWORK documents, Ramin will add five markdown features. 
   - Ramin will submit a pull request and ask Bre to review
   - Bre will review the document and merge the pull request
 
