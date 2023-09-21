@@ -23,7 +23,7 @@ today <- Sys.Date()
 today
 ```
 
-    ## [1] "2023-09-20"
+    ## [1] "2023-09-21"
 
 ``` r
 # I removed the underscore on either side of the the prospective variable (today), since the error message read unexpected symbol (line 19)
