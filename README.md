@@ -14,7 +14,7 @@ This is the _**Collaborative Project -Milestone 1**_ in conjunction with UBC’s
 Files |  Description
 ------|--------------
 1.	__*README.md*__ File |  __a.__ A README file should be present in all projects providing instructions on the tasks ensuring one has a full and detailed understanding of the requirements and goals of the project.  __b.__ The README should contain an explanation of all additional files in the repository.   __c.__ If there is code to be analysed, an instructional guide to analyze the data and transfer it to GitHub should be provided.
-2.	__*TEAMWORK.md *__ File | __a.__	Our TEAMWORK file contains a group contract allowing for expectations to be communicated and agreed upon among members. This document includes how tasks will be divided among group members, clear deadlines for each task, and an agreed upon communication platform that will be used to discuss the project among all group members (e.g. Slack or GitHub Issues).
+2.	__*TEAMWORK.md*__ File | __a.__	Our TEAMWORK file contains a group contract allowing for expectations to be communicated and agreed upon among members. This document includes how tasks will be divided among group members, clear deadlines for each task, and an agreed upon communication platform that will be used to discuss the project among all group members (e.g. Slack or GitHub Issues).
 3.	__*Troubleshooting-R.md*__ File | __a.__	This file contains three broken chunks of R code which must be investigated and solved. Annotations should be added to clearly layout what was wrong and what was edited to resolve the errors of the original R code. 
 
 #### Transferring R code to Github
