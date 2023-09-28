@@ -61,7 +61,7 @@ Now that we've had a quick look at the dataset, it would be interesting to explo
 ### ERROR HERE ###
 filter(movieLens, genres == "Drama")
 filter(movieLens, !genres == "Drama")
-filter(movieLens, year >= 2000)
+filter(movieLens, year > 2000)
 filter(movieLens, year == 1999 | year == 2000)
 # before the code after 1999 was written as (month == 2000), this came back as an error because 2000 is a year not a month - I changed the code to reflect this and in doing so fixed this mistake
 filter(movieLens, rating > 4.5, year < 1995)
