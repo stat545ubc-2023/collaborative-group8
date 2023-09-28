@@ -84,16 +84,22 @@ Some of the variables in the `movieLens` dataset are in *camelCase* (in fact, *m
 ```{r}
 ### ERROR HERE ###
 movieLens <- movieLens %>%
-  rename(user_id == userId,
-         movie_id == movieId)
+  rename(user_id = userId,
+         movie_id = movieId)
+
+#to resolve this error I removed the double equals sign in the rename function.
+
 ```
 
 As you already know, `mutate()` defines and inserts new variables into a tibble. There is *another mystery function similar to `mutate()`* that adds the new variable, but also drops existing ones. I wanted to create an `average_rating` column that takes the `mean(rating)` across all entries, and I only want to see that variable (i.e drop all others!) but I forgot what that mystery function is. Can you remember?
 
 ```{r}
 ### ERROR HERE ### 
-mutate(movieLens,
-       average_rating = mean(rating))
+
+movieLens %>%
+  transmute(average_rating = mean(rating))
+
+#The transmute function can allow for the addition of a new variable across all rows, while dropping all preexisting columns
 ```
 
 ## Exercise 3: Calculating with `summarise()`-like functions
@@ -113,7 +119,9 @@ Without using `group_by()`, I want to find out how many movie reviews there have
 ```{r}
 ### ERROR HERE ###
 movieLens %>%
-  tally(year)
+  count(year)
+
+#I swapped the tally() function for the count() function to resolve this error
 ```
 
 Both `count()` and `tally()` can be grouped by multiple columns. Below, I want to count the number of movie reviews by title and rating, and sort the results.
@@ -121,7 +129,10 @@ Both `count()` and `tally()` can be grouped by multiple columns. Below, I want t
 ```{r}
 ### ERROR HERE ###
 movieLens %>%
-  count(c(title, rating), sort = TRUE)
+  count(title, rating)
+
+#I removed "c(title, rating), sort = TRUE" in the count function to resolve this error
+
 ```
 
 Not only do `count()` and `tally()` quickly allow you to count items within your dataset, `add_tally()` and `add_count()` are handy shortcuts that add an additional columns to your tibble, rather than collapsing each group.
