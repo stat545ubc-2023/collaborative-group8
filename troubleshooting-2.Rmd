@@ -17,12 +17,17 @@ Note that errors are not all syntactic (i.e., broken code)! Some are logical err
 
 ```{r}
 ### ERROR HERE ###
-load.packages(dslabs)
-load.packages(tidyverse)
-load.packages(stringr)
+# these packages were written as load.packages() - this function doesn't exist - first I checked my computer and when the packages weren't found using the library() function I used the install.packages() to ensure all packages were installed
+install.packages("dslabs")
+install.packages("tidyverse")
+install.packages("stringr")
 install.packages("devtools") # Do not run this if you already have this package installed! 
 devtools::install_github("JoeyBernhardt/singer")
-load.packages(gapminder)
+library(gapminder)
+library(dslabs)
+library(tidyverse)
+library(stringr)
+# i then used the library() fucntion to load all of the packages
 ```
 
 Let's have a look at the dataset! My goal is to:
@@ -33,8 +38,14 @@ Let's have a look at the dataset! My goal is to:
 
 ```{r}
 ### ERROR HERE ###
-class(dslabs::movielens)
-movieLens <- as_tibble(dslabs::movielens)
+class(dslabs::movielens) ## this checks this class of the data set called movielens, which is taken from dslabs packages which cotains data sets
+movieLens <- as_tibble(movielens)
+## the above turns the movielens data into a tibble - using the as_tibble() function and stores this tibble in a variable called movieLens
+is_tibble(movieLens)
+class(movieLens)
+## is_tibble was added to check that the movielens data was turned into a tibble, class movie lens was to double check that this tibble was created and stored under the name movieLens
+glimpse(movieLens)
+## glimpse() is a dplyr fuction that allows you to have a quick look at your data set
 dim(movieLens)
 ```
 
@@ -51,7 +62,8 @@ Now that we've had a quick look at the dataset, it would be interesting to explo
 filter(movieLens, genres == "Drama")
 filter(movieLens, !genres == "Drama")
 filter(movieLens, year >= 2000)
-filter(movieLens, year == 1999 | month == 2000)
+filter(movieLens, year == 1999 | year == 2000)
+# before the code after 1999 was written as (month == 2000), this came back as an error because 2000 is a year not a month - I changed the code to reflect this and in doing so fixed this mistake
 filter(movieLens, rating > 4.5, year < 1995)
 ```
 
@@ -61,7 +73,8 @@ While filtering for *all movies that do not belong to the genre drama* above, I 
 ### ERROR HERE ###
 movieLens %>%
   filter(!genres == "Drama") %>%
-  select(title, genres, year, rating, timestamp)
+  select(title, genres, everything())
+# instead of writing all of the column names into the select function to order them - I kept title and genres to keep their order as the first two columns and then replaced the remaining column names with the everything() function
 ```
 
 ## Exercise 2: Calculating with `mutate()`-like functions
