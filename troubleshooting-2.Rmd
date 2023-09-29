@@ -27,7 +27,7 @@ library(gapminder)
 library(dslabs)
 library(tidyverse)
 library(stringr)
-# i then used the library() fucntion to load all of the packages
+# i then used the library() function to load all of the packages
 ```
 
 Let's have a look at the dataset! My goal is to:
@@ -38,14 +38,14 @@ Let's have a look at the dataset! My goal is to:
 
 ```{r}
 ### ERROR HERE ###
-class(dslabs::movielens) ## this checks this class of the data set called movielens, which is taken from dslabs packages which cotains data sets
+class(dslabs::movielens) ## this checks this class of the data set called movielens, which is taken from dslabs packages which contains data sets
 movieLens <- as_tibble(movielens)
 ## the above turns the movielens data into a tibble - using the as_tibble() function and stores this tibble in a variable called movieLens
 is_tibble(movieLens)
 class(movieLens)
 ## is_tibble was added to check that the movielens data was turned into a tibble, class movie lens was to double check that this tibble was created and stored under the name movieLens
 glimpse(movieLens)
-## glimpse() is a dplyr fuction that allows you to have a quick look at your data set
+## glimpse() is a dplyr function that allows you to have a quick look at your data set
 dim(movieLens)
 ```
 
